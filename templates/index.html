@@ -1,0 +1,30 @@
+<!--HTML-шаблон для главной страницы веб-приложения, где пользователь выбирает музыкальный инструмент-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Generator</title>
+</head>
+<body>
+    <h1>Music Generator</h1>
+    <form action="/" method="POST">
+        <label for="initial_sequence">Initial Sequence:</label><br>
+        <input type="text" id="initial_sequence" name="initial_sequence" value="60 62 64"><br><br>
+        <input type="submit" value="Generate Music">
+    </form>
+    
+    {% if generated_music_path %}
+        <h2>Generated Music</h2>
+        <audio controls>
+            <source src="{{ generated_music_path }}" type="audio/midi">
+            Your browser does not support the audio element.
+        </audio>
+    {% endif %}
+</body>
+</html>
+
+
+
+
